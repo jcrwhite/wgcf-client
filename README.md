@@ -1,2 +1,2 @@
 # wgcf-client
-A Node based client to set up a Cloudflare WARP (WireGaurd protocol) VPN
+A simple Node.JS based client to set up a Cloudflare WARP (WireGaurd protocol) VPN
