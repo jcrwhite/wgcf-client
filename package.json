@@ -16,7 +16,11 @@
     "WARP",
     "CloudFlare"
   ],
-  "author": "Josh White",
+  "author": {
+    "name": "Josh White",
+    "email": "coding.in.the.clouds@gmail.com",
+    "url": "https://github.com/jcrwhite"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jcrwhite/wgcf-client/issues"
