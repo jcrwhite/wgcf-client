@@ -13,36 +13,29 @@ console.info(
 const keys = helpers.argParse(...process.argv.slice(2));
 
 const register = keys => {
-  return http
-    .post(config.reg_url, null, {
-      install_id: "",
-      tos: helpers.timestamp(),
-      key: keys.public,
-      fcm_token: "",
-      type: "Android",
-      locale: "en_US"
-    })
-    .then(response => http.assertResponse(response));
+  return http.post(config.reg_url, {
+    install_id: "",
+    tos: helpers.timestamp(),
+    key: keys.public,
+    fcm_token: "",
+    type: "Android",
+    locale: "en_US"
+  });
 };
 
 const warpspeed = account =>
-  http
-    .patch(
-      `${config.reg_url}/${account.id}`,
-      null,
-      {
-        warp_enabled: true
-      },
-      { headers: { authorization: `Bearer ${account.token}` } }
-    )
-    .then(response => http.assertResponse(response));
+  http.patch(
+    `${config.reg_url}/${account.id}`,
+    {
+      warp_enabled: true
+    },
+    { headers: { authorization: `Bearer ${account.token}` } }
+  );
 
 const getServerConfig = account =>
-  http
-    .get(`${config.reg_url}/${account.id}`, null, {
-      headers: { authorization: `Bearer ${account.token}` }
-    })
-    .then(response => http.assertResponse(response));
+  http.get(`${config.reg_url}/${account.id}`, {
+    headers: { authorization: `Bearer ${account.token}` }
+  });
 
 const getWireGaurdConf = (ipv4, ipv6, endpoint, private, public) => `
 [Interface]

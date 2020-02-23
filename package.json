@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/jcrwhite/wgcf-client/issues"
   },
-  "homepage": "https://github.com/jcrwhite/wgcf-client#readme"
+  "homepage": "https://github.com/jcrwhite/wgcf-client#readme",
+  "dependencies": {
+    "shh-node-http": "^1.0.0"
+  }
 }
