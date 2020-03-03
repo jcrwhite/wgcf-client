@@ -1,10 +1,10 @@
-const { http } = require("shh-node-http");
+const { shh } = require("shh-node-http");
 const config = require("./config");
 const fileHandler = require("./fileHandler");
 const helpers = require("./helpers");
 
 module.exports = {
-  http,
+  shh,
   config,
   fileHandler,
   helpers

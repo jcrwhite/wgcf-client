@@ -3,7 +3,7 @@
 /**
  * Main script file
  */
-const { http, config, fileHandler, helpers } = require("./utils");
+const { shh, config, fileHandler, helpers } = require("./utils");
 
 console.info("This project is in no way affiliated with Cloudflare\n");
 console.info(
@@ -13,7 +13,7 @@ console.info(
 const keys = helpers.argParse(...process.argv.slice(2));
 
 const register = keys => {
-  return http.post(config.reg_url, {
+  return shh.post(config.reg_url, {
     install_id: "",
     tos: helpers.timestamp(),
     key: keys.public,
@@ -24,7 +24,7 @@ const register = keys => {
 };
 
 const warpspeed = account =>
-  http.patch(
+  shh.patch(
     `${config.reg_url}/${account.id}`,
     {
       warp_enabled: true
@@ -33,7 +33,7 @@ const warpspeed = account =>
   );
 
 const getServerConfig = account =>
-  http.get(`${config.reg_url}/${account.id}`, {
+  shh.get(`${config.reg_url}/${account.id}`, {
     headers: { authorization: `Bearer ${account.token}` }
   });
 
