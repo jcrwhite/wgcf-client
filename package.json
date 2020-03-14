@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/jcrwhite/wgcf-client#readme",
   "dependencies": {
-    "shh-node-http": "^2.0.1"
+    "shh-node-http": "^3.0.0"
   }
 }
